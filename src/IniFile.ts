@@ -33,6 +33,10 @@ class IniFile<T extends object> {
     return this.mMutableData;
   }
 
+  public set data(value: T) {
+    this.mMutableData = value;
+  }
+
   public changes(): IChanges {
     if (this.mMutableData === undefined) {
       return {
