@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IIniFormat } from './IIniFormat';
 import IniFile from './IniFile';
 import * as Promise from 'bluebird';

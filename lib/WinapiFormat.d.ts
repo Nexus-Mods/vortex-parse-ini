@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { IChanges } from './IChanges';
 import { IIniFormat } from './IIniFormat';
 import * as Promise from 'bluebird';
