@@ -20,16 +20,20 @@ class WinapiFormat implements IIniFormat {
   }
 
   public write(filePath: string, data: any, changes: IChanges): Promise<void> {
-    changes.removed.forEach((fullKey) => {
-      const [section, key] = fullKey.split('###');
-      winapi.WritePrivateProfileString(section, key, null, filePath);
-    });
-    [].concat(changes.added, changes.changed)
-        .forEach((fullKey) => {
-          const[section, key] = fullKey.split('###');
-          winapi.WritePrivateProfileString(section, key, data[section][key], filePath);
-        });
-    return Promise.resolve();
+    try {
+      changes.removed.forEach((fullKey) => {
+        const [section, key] = fullKey.split('###');
+        winapi.WritePrivateProfileString(section, key, null, filePath);
+      });
+      [].concat(changes.added, changes.changed)
+          .forEach((fullKey) => {
+            const[section, key] = fullKey.split('###');
+            winapi.WritePrivateProfileString(section, key, data[section][key], filePath);
+          });
+      return Promise.resolve();
+    } catch (err) {
+      return Promise.reject(err);
+    }
   }
 
   private readSectionList(filePath: string): Promise<string[]> {
