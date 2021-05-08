@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "winapi-bindings": "Nexus-Mods/node-winapi-bindings"
   }
 }
