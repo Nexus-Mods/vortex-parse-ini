@@ -3,7 +3,8 @@ declare class IniFile<T extends object> {
     private mStoredData;
     private mMutableData;
     constructor(data: T);
-    data: T;
+    get data(): T;
+    set data(value: T);
     changes(): IChanges;
     apply(): void;
 }
