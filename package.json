@@ -1,6 +1,6 @@
 {
   "name": "vortex-parse-ini",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "Parse ini files, supporting different ini formats",
   "main": "./lib/index.js",
   "files": [
@@ -15,10 +15,10 @@
   "author": "Black Tree Gaming Ltd.",
   "license": "GPL-3.0",
   "devDependencies": {
-    "@types/lodash": "^4.14.53"
+    "@types/lodash": "^4.14.53",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
-    "bluebird": "^3.7.2",
     "lodash": "^4.17.21",
     "winapi-bindings": "Nexus-Mods/node-winapi-bindings"
   }

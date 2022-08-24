@@ -1,6 +1,5 @@
 import { IChanges } from './IChanges';
 import { IIniFormat } from './IIniFormat';
-import * as Promise from 'bluebird';
 declare class WinapiFormat implements IIniFormat {
     constructor();
     read(filePath: string): Promise<any>;

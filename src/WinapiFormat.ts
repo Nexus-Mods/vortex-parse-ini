@@ -1,7 +1,6 @@
 import { IChanges } from './IChanges';
 import { IIniFormat } from './IIniFormat';
 
-import * as Promise from 'bluebird';
 import * as winapi from 'winapi-bindings';
 
 class WinapiFormat implements IIniFormat {
@@ -11,11 +10,11 @@ class WinapiFormat implements IIniFormat {
   public read(filePath: string): Promise<any> {
     const output = {};
     return this.readSectionList(filePath)
-        .then((sections) => Promise.map(
-                  sections, (section) => this.readSection(filePath, section)
+        .then((sections) => Promise.all(
+                  sections.map((section) => this.readSection(filePath, section)
                                              .then((content) => {
                                                output[section] = content;
-                                             })))
+                                             }))))
         .then(() => Promise.resolve(output));
   }
 

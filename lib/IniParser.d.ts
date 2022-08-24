@@ -1,6 +1,5 @@
 import { IIniFormat } from './IIniFormat';
 import IniFile from './IniFile';
-import * as Promise from 'bluebird';
 declare class IniParser {
     private mFormat;
     constructor(format: IIniFormat);
